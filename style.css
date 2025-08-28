@@ -1,0 +1,261 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --orange: #ff7a00;
+  --orange-dark: #e26500;
+  --white: #ffffff;
+  --gray: #f5f5f5;
+  --text: #333333;
+  --muted: #666666;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --radius: 12px;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  background: var(--gray);
+  color: var(--text);
+  line-height: 1.6;
+  padding-bottom: 60px; /* space for bottom mobile menu */
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background: var(--orange);
+  color: var(--white);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 40px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 20px;
+}
+
+.wallpaper {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.wallpaper img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+.wallpaper p {
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* =========================
+   FORMS
+========================= */
+.form-container {
+  background: var(--white);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--orange);
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="tel"],
+.form-container input[type="file"],
+.form-container select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+.form-container button {
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.form-container button:hover {
+  background: var(--orange-dark);
+}
+
+.form-container p {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.form-container p a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* =========================
+   PROFILE
+========================= */
+.profile-card {
+  background: var(--white);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.profile-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 3px solid var(--orange);
+}
+
+.profile-card h2 {
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.profile-card p {
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.profile-card button {
+  margin-top: 12px;
+  background: #ef4444;
+}
+
+.profile-card button:hover {
+  background: #c31b1b;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--white);
+  border-top: 1px solid #ddd;
+  color: var(--muted);
+  margin-top: 40px;
+}
+
+/* =========================
+   MOBILE BOTTOM MENU
+========================= */
+.mobile-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--orange);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.mobile-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mobile-menu a:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   SPLASH SCREEN
+========================= */
+body.splash, html.splash {
+  background: var(--orange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+body.splash .logo {
+  width: 150px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+body.splash .loader {
+  border: 6px solid #fff;
+  border-top: 6px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-top: 10px;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+@keyframes fadeIn { 0% { opacity: 0; transform: scale(0.8);} 100% { opacity: 1; transform: scale(1);} }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
